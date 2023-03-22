@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkf5ubs36nd0a"]
+
+[ext_resource type="Texture2D" uid="uid://b2j63ct3xbi2a" path="res://Assets/MaterialsAndImages/NinePatchRectButton.png" id="1_r837u"]
+[ext_resource type="Theme" uid="uid://b6fnl6anohg2n" path="res://Assets/ThemesAndFonts/mdz_theme.tres" id="2_kxueh"]
+
+[node name="StartButton" type="Button"]
+custom_minimum_size = Vector2(400, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_r837u")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_kxueh")
+text = "Quiz starten"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

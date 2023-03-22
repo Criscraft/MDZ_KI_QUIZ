@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://co6qphchlhop"]
+
+[ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_av6od"]
+[ext_resource type="Theme" uid="uid://b6fnl6anohg2n" path="res://Assets/ThemesAndFonts/mdz_theme.tres" id="1_xpugo"]
+[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/start_button.tscn" id="2_18s1v"]
+[ext_resource type="Texture2D" uid="uid://cltu434qqxwhi" path="res://Assets/MaterialsAndImages/logo.png" id="3_op5bb"]
+[ext_resource type="Script" path="res://Assets/Scripts/start_button.gd" id="4_rx5rv"]
+[ext_resource type="PackedScene" uid="uid://d30r3asvkg7yl" path="res://Scenes/question_scene.tscn" id="5_vndos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tw4p"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="StartScene" instance=ExtResource("1_av6od")]
+
+[node name="Staging" type="PanelContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4tw4p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Staging" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Header" type="Label" parent="Staging/VBoxContainer" index="0"]
+layout_mode = 2
+theme = ExtResource("1_xpugo")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 64
+text = "Wie viel wissen Sie bereits zum Thema künstliche Intelligenz?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SubHeader" type="Label" parent="Staging/VBoxContainer" index="1"]
+layout_mode = 2
+theme = ExtResource("1_xpugo")
+theme_type_variation = &"HeaderSmall"
+text = "Finden Sie es heraus und erhalten Sie das Ergebnis."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButton" parent="Staging/VBoxContainer" index="2" instance=ExtResource("2_18s1v")]
+layout_mode = 2
+script = ExtResource("4_rx5rv")
+scene_base = NodePath("../../..")
+scene = ExtResource("5_vndos")
+
+[node name="Logo" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+offset_right = 1439.0
+offset_bottom = 524.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_op5bb")
+stretch_mode = 4
+
+[connection signal="pressed" from="Staging/VBoxContainer/StartButton" to="Staging/VBoxContainer/StartButton" method="_on_pressed"]
