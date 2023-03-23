@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq42742m4ucjb"]
+
+[ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_wiyg7"]
+[ext_resource type="Script" path="res://Assets/Scripts/final_result_scene.gd" id="2_6kg7d"]
+[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ojem3"]
+
+[node name="FinalResultScene" instance=ExtResource("1_wiyg7")]
+script = ExtResource("2_6kg7d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Herzlichen Glückwunsch!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer" index="1"]
+layout_mode = 2
+text = "Sie haben x von y Fragen richtig beantwortet."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeSceneButton" parent="VBoxContainer" index="2" instance=ExtResource("3_ojem3")]
+layout_mode = 2
+text = "Neues Quiz!"
+scene_base = NodePath("../..")
+target_scene_path = "res://Scenes/start_scene.tscn"

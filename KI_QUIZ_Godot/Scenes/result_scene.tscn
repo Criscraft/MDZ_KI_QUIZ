@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://crn7utkkifup5"]
+
+[ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_dul1x"]
+[ext_resource type="Script" path="res://Scenes/result_scene.gd" id="2_2ragr"]
+[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ei51b"]
+
+[node name="ResultScene" instance=ExtResource("1_dul1x")]
+script = ExtResource("2_2ragr")
+question_scene_path = "res://Scenes/question_scene.tscn"
+final_result_scene_path = "res://Scenes/final_result_scene.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Ergebnis"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeSceneButton" parent="VBoxContainer" index="1" instance=ExtResource("3_ei51b")]
+layout_mode = 2
+text = "Zur nächsten Frage!"
+scene_base = NodePath("../..")

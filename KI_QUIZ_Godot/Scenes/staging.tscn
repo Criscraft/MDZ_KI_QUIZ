@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://libqkbb8rdlw"]
+[gd_scene load_steps=4 format=3 uid="uid://libqkbb8rdlw"]
 
 [ext_resource type="Script" path="res://Scenes/staging.gd" id="1_nxlhj"]
+[ext_resource type="PackedScene" uid="uid://c1avfwy0ocnqp" path="res://Assets/Scenes/background_panel.tscn" id="2_7we3f"]
+[ext_resource type="Texture2D" uid="uid://cltu434qqxwhi" path="res://Assets/MaterialsAndImages/logo.png" id="3_ksgak"]
 
 [node name="Staging" type="Control"]
 layout_mode = 3
@@ -11,19 +13,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nxlhj")
 
+[node name="BackgroundPanel" parent="." instance=ExtResource("2_7we3f")]
+layout_mode = 1
+mouse_filter = 2
+
 [node name="Scene" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LoadingScreen" type="ColorRect" parent="."]
+[node name="LoadingScreen" parent="." instance=ExtResource("2_7we3f")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1449.0
+offset_bottom = 658.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ksgak")
+stretch_mode = 4

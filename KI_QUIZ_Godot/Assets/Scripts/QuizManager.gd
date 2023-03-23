@@ -8,6 +8,7 @@ var questions_selected : Array[QuestionResource]
 var points : int = 0
 var active_question_ind : int = -1
 var question_resources : Array[QuestionResource]
+var current_question_correct : bool
 
 func load_json(path):
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -56,13 +57,26 @@ func get_next_question_resource():
 	return questions_selected[active_question_ind]
 	
 	
-func report_result(correct : bool):
-	if correct:
+func get_current_question_resource():
+	return questions_selected[active_question_ind]
+	
+	
+func check_result(answer : String):
+	var current_question = questions_selected[active_question_ind]
+	var answer_ind = current_question.answers.find(answer)
+	var correct_answer_ind = current_question.correct_answer
+	current_question_correct = answer_ind == correct_answer_ind
+	if current_question_correct:
 		points += 1
+	return current_question_correct
 		
 		
 func get_result():
 	return [points, questions_selected.size()]
+	
+
+func get_progress():
+	return [active_question_ind, questions_selected.size()]
 	
 	
 func end_game():

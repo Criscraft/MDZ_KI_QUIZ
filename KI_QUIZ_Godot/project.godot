@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 QuizManager="*res://Assets/Scripts/QuizManager.gd"
 
+[gui]
+
+theme/custom="res://Assets/ThemesAndFonts/mdz_theme.tres"
+theme/custom_font="res://Assets/ThemesAndFonts/OpenSans-VariableFont_wdth,wght.ttf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
