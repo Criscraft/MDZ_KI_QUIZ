@@ -47,6 +47,7 @@ func load_scene(p_scene_path : String):
 	current_scene_path = p_scene_path
 	$Scene.add_child(current_scene)
 	_add_signals(current_scene)
+	current_scene.scene_loaded()
 	
 	# Fade to visible
 	var tween = create_tween()

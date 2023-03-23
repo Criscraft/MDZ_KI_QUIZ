@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d30r3asvkg7yl"]
+[gd_scene load_steps=7 format=3 uid="uid://d30r3asvkg7yl"]
 
 [ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_5kp3s"]
 [ext_resource type="Theme" uid="uid://b6fnl6anohg2n" path="res://Assets/ThemesAndFonts/mdz_theme.tres" id="2_70y3l"]
+[ext_resource type="Script" path="res://Scenes/question_scene.gd" id="2_v10n2"]
 [ext_resource type="Texture2D" uid="uid://cltu434qqxwhi" path="res://Assets/MaterialsAndImages/logo.png" id="3_b1547"]
 [ext_resource type="PackedScene" uid="uid://bgl3j2imqb088" path="res://Assets/Scenes/choice_button.tscn" id="3_r4atc"]
 
@@ -9,6 +10,7 @@
 bg_color = Color(1, 1, 1, 1)
 
 [node name="QuestionScene" instance=ExtResource("1_5kp3s")]
+script = ExtResource("2_v10n2")
 
 [node name="Panel" type="PanelContainer" parent="." index="0"]
 layout_mode = 1
@@ -24,7 +26,7 @@ layout_mode = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="Header" type="Label" parent="Panel/VBoxContainer" index="0"]
+[node name="Question" type="Label" parent="Panel/VBoxContainer" index="0"]
 layout_mode = 2
 theme = ExtResource("2_70y3l")
 theme_type_variation = &"HeaderLarge"

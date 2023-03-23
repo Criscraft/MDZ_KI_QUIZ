@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/staging.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+QuizManager="*res://Assets/Scripts/QuizManager.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
