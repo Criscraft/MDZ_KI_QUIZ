@@ -22,6 +22,6 @@
 	"id": "q4",
 	"question": "Das Supervised Learning ist geprägt von:?",
 	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "Testdaten für's Training nehmen"],
-	"correct_answer" : 2
+	"correct_answer" : 3
 }
 ]
