@@ -17,7 +17,7 @@
 	"question": "Was gehört nicht zu den Lern-Methoden des Maschinellen Lernens?",
 	"answers" : ["Supervised Learning", "Reinforcement Learning", "Super-human Learning", "Unsupervised Learning"],
 	"correct_answer" : 2
-}
+},
 {
 	"id": "q4",
 	"question": "Das Supervised Learning ist geprägt von:?",
