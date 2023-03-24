@@ -18,4 +18,10 @@
 	"answers" : ["Supervised Learning", "Reinforcement Learning", "Super-human Learning", "Unsupervised Learning"],
 	"correct_answer" : 2
 }
+{
+	"id": "q4",
+	"question": "Das Supervised Learning ist geprägt von:?",
+	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "Testdaten für's Training nehmen"],
+	"correct_answer" : 2
+}
 ]
