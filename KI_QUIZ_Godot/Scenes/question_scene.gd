@@ -26,7 +26,6 @@ func _ready():
 	
 func scene_loaded():
 	# Called after scene is loaded
-	QuizManager.start_new_game(2)
 	# Get the next question
 	current_question_resource = QuizManager.get_next_question_resource()
 	# Apply the question
@@ -45,7 +44,7 @@ func update_question():
 	# Update the choices
 	# First, we shuffle the order of the choices
 	question_answers = current_question_resource.answers.duplicate()
-	var answer = question_answers[current_question_resource.correct_answer]
+	#var answer = question_answers[current_question_resource.correct_answer]
 	question_answers.shuffle()
 	choice_a.get_node("Label").text = question_answers[0]
 	choice_b.get_node("Label").text = question_answers[1]

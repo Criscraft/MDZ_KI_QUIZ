@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3iqfdw2jsj5w"]
+[gd_scene load_steps=4 format=3 uid="uid://3iqfdw2jsj5w"]
 
 [ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_av6od"]
 [ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="2_fjwba"]
+[ext_resource type="Script" path="res://Assets/Scripts/start_quiz_button.gd" id="3_euat5"]
 
 [node name="StartScene" instance=ExtResource("1_av6od")]
 
@@ -32,7 +33,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ChangeSceneButton" parent="VBoxContainer" index="2" instance=ExtResource("2_fjwba")]
+[node name="StartQuizButton" parent="VBoxContainer" index="2" instance=ExtResource("2_fjwba")]
 layout_mode = 2
 text = "Quiz starten!"
+script = ExtResource("3_euat5")
 scene_base = NodePath("../..")
+
+[connection signal="pressed" from="VBoxContainer/StartQuizButton" to="." method="_on_start_button_pressed"]

@@ -3,25 +3,28 @@
 	"id": "q1",
 	"question": "Wofür steht der Begriff KI?",
 	"answers" : ["Künstliche Intelligenz", "Komplexe Integration", "Kollaborative Interaktion", "Kognitive Identifikation"],
-	"correct_answer" : 0
+	"correct_answer" : 0,
+	"explanation" : ""
 },
 {
 	"id": "q2",
 	"question": "Was ist ein neuronales Netzwerk?",
 	"answers" : ["Eine Art von künstlicher Intelligenz", "Eine Art von Programmiersprache", "Eine Art von Betriebssystem", "Eine Art von Datenbank"],
-	"correct_answer" : 0	
-	
+	"correct_answer" : 0,
+	"explanation" : ""
 },
 {
 	"id": "q3",
 	"question": "Was gehört nicht zu den Lern-Methoden des Maschinellen Lernens?",
 	"answers" : ["Supervised Learning", "Reinforcement Learning", "Super-human Learning", "Unsupervised Learning"],
-	"correct_answer" : 2
+	"correct_answer" : 2,
+	"explanation" : ""
 },
 {
 	"id": "q4",
 	"question": "Das Supervised Learning ist geprägt von:?",
 	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "Testdaten für's Training nehmen"],
-	"correct_answer" : 3
+	"correct_answer" : 3,
+	"explanation" : ""
 }
 ]
