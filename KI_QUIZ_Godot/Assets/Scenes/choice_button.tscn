@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/choice_button.gd" id="1_718x5"]
 
 [node name="ChoiceButton" type="Button"]
-custom_minimum_size = Vector2(400, 100)
+custom_minimum_size = Vector2(500, 100)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,4 +26,4 @@ text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-max_lines_visible = 2
+max_lines_visible = 3

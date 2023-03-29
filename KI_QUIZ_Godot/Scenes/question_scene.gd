@@ -10,11 +10,13 @@ class_name QuestionScene
 # Scene base to trigger loading
 @onready var _scene_base : SceneBase = get_node(scene_base)
 
-@onready var question = $VBoxContainer/Question
+@onready var question_label = $VBoxContainer/Question
 @onready var choice_a = $VBoxContainer/CenterContainer/GridContainer/ChoiceA
 @onready var choice_b = $VBoxContainer/CenterContainer/GridContainer/ChoiceB
 @onready var choice_c = $VBoxContainer/CenterContainer/GridContainer/ChoiceC
 @onready var choice_d = $VBoxContainer/CenterContainer/GridContainer/ChoiceD
+
+@onready var progress_label = $VBoxContainer/Progress
 
 var choices = []
 var current_question_resource : QuestionResource
@@ -30,7 +32,8 @@ func scene_loaded():
 	current_question_resource = QuizManager.get_next_question_resource()
 	# Apply the question
 	update_question()
-
+	var progress = QuizManager.get_progress()
+	progress_label.text = "Frage " + str(progress[0] + 1) + " von " + str(progress[1])
 
 func scene_exiting():
 	# called when we're about to remove this scene
@@ -39,7 +42,7 @@ func scene_exiting():
 	
 func update_question():
 	# Update the question
-	question.text = current_question_resource.question
+	question_label.text = current_question_resource.question
 	
 	# Update the choices
 	# First, we shuffle the order of the choices

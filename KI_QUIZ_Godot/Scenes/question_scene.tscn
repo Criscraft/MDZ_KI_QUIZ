@@ -1,58 +1,72 @@
-[gd_scene load_steps=6 format=3 uid="uid://d30r3asvkg7yl"]
+[gd_scene load_steps=5 format=3 uid="uid://d30r3asvkg7yl"]
 
-[ext_resource type="PackedScene" uid="uid://q8rvj5qgf7yy" path="res://Scenes/scene_base.tscn" id="1_5kp3s"]
 [ext_resource type="Script" path="res://Scenes/question_scene.gd" id="2_v10n2"]
 [ext_resource type="PackedScene" uid="uid://crn7utkkifup5" path="res://Scenes/result_scene.tscn" id="3_ngq78"]
 [ext_resource type="PackedScene" uid="uid://bgl3j2imqb088" path="res://Assets/Scenes/choice_button.tscn" id="3_r4atc"]
 [ext_resource type="Script" path="res://Assets/Scripts/VBoxContainerResponsive.gd" id="5_k021y"]
 
-[node name="QuestionScene" instance=ExtResource("1_5kp3s")]
+[node name="QuestionScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_v10n2")
 scene_base = NodePath(".")
 scene = ExtResource("3_ngq78")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
-clip_contents = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 script = ExtResource("5_k021y")
 
-[node name="Question" type="Label" parent="VBoxContainer" index="0"]
+[node name="Progress" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Frage x von x"
+horizontal_alignment = 1
+
+[node name="Line" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+color = Color(0.803922, 0.0392157, 0.117647, 1)
+
+[node name="Question" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 64
-text = "Frage 1"
+theme_override_font_sizes/font_size = 42
+text = "Frage 1 sdf sdf sf asdf asf asfd asf asfd asf asf asfd asf asf asf asdf asf asf asf asdf asf asf asdf asf asdffsf asf saf asf asf sadf asf s sadf asf fs asdf a"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" index="1"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer" index="0"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="ChoiceA" parent="VBoxContainer/CenterContainer/GridContainer" index="0" instance=ExtResource("3_r4atc")]
+[node name="ChoiceA" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_r4atc")]
 layout_mode = 2
 
-[node name="ChoiceB" parent="VBoxContainer/CenterContainer/GridContainer" index="1" instance=ExtResource("3_r4atc")]
+[node name="ChoiceB" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_r4atc")]
 layout_mode = 2
 
-[node name="ChoiceC" parent="VBoxContainer/CenterContainer/GridContainer" index="2" instance=ExtResource("3_r4atc")]
+[node name="ChoiceC" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_r4atc")]
 layout_mode = 2
 
-[node name="ChoiceD" parent="VBoxContainer/CenterContainer/GridContainer" index="3" instance=ExtResource("3_r4atc")]
+[node name="ChoiceD" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_r4atc")]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/ChoiceA" to="." method="_on_choice_pressed" binds= [0]]

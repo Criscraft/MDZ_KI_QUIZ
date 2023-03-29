@@ -2,6 +2,8 @@ extends SceneBase
 class_name ResultScene
 
 @onready var result_label = $VBoxContainer/ResultLabel
+@onready var correct_answer_label = $VBoxContainer/CorrectAnswer
+@onready var explanation_label = $VBoxContainer/Explanation
 @onready var change_scene_button = $VBoxContainer/ChangeSceneButton
 
 @export var question_scene_path : String = "res://Scenes/question_scene.tscn"
@@ -23,9 +25,13 @@ func scene_exiting():
 	
 func update_results():
 	if QuizManager.current_question_correct:
-		result_label.text = "Korrekt!"
+		result_label.text = "Korrekt! Die richtige Antwort lautet:"
 	else:
-		result_label.text = "Leider falsch!"
+		result_label.text = "Leider falsch! Die richtige Antwort lautet:"
+	
+	correct_answer_label.text = current_question_resource.answers[current_question_resource.correct_answer]
+	
+	explanation_label.text = current_question_resource.explanation
 		
 	var progress = QuizManager.get_progress()
 	if progress[0] < progress[1] - 1:

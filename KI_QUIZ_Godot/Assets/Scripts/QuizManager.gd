@@ -28,6 +28,7 @@ func dict_to_question_resource(dic : Dictionary):
 	question_resource.question = dic["question"]
 	question_resource.answers = dic["answers"]
 	question_resource.correct_answer = int(dic["correct_answer"])
+	question_resource.explanation = dic["explanation"]
 	return question_resource
 
 

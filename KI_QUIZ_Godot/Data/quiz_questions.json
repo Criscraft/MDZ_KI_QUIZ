@@ -4,27 +4,41 @@
 	"question": "Wofür steht der Begriff KI?",
 	"answers" : ["Künstliche Intelligenz", "Komplexe Integration", "Kollaborative Interaktion", "Kognitive Identifikation"],
 	"correct_answer" : 0,
-	"explanation" : ""
+	"explanation" : "Bereits 1748 äußerte der Arzt und Schriftsteller Julien Offray de La Mettrie die Idee, man könne menschliches Denken in Maschinen realisieren. Seine provokanten Schriften stießen allerings auf wenig Gegenliebe. So verfasste er sein Werk 'Monsieur Machine' im preußischen Exil."
 },
 {
 	"id": "q2",
 	"question": "Was ist ein neuronales Netzwerk?",
 	"answers" : ["Eine Art von künstlicher Intelligenz", "Eine Art von Programmiersprache", "Eine Art von Betriebssystem", "Eine Art von Datenbank"],
 	"correct_answer" : 0,
-	"explanation" : ""
+	"explanation" : "Neuronale Netzwerke werden meist für die datengestützte Lösung komplexer Probleme verwendet."
 },
 {
 	"id": "q3",
 	"question": "Was gehört nicht zu den Lern-Methoden des Maschinellen Lernens?",
 	"answers" : ["Supervised Learning", "Reinforcement Learning", "Super-human Learning", "Unsupervised Learning"],
 	"correct_answer" : 2,
-	"explanation" : ""
+	"explanation" : "Super-human Learning haben wir uns ausgedacht. Bei manchen Problemstellungen wurde aber bereits gemessen, dass Maschinen bessere Ergebnisse als Menschen liefern, etwa beim Spielen des Spiels GO."
 },
 {
 	"id": "q4",
-	"question": "Das Supervised Learning ist geprägt von:?",
-	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "Testdaten für's Training nehmen"],
-	"correct_answer" : 3,
-	"explanation" : ""
+	"question": "Supervised Learning ist geprägt von:",
+	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "der Nutzung der Testdaten für's Training"],
+	"correct_answer" : 2,
+	"explanation" : "Beim Supervised Learning trainiert man eine Maschine mit Trainingsdaten. Diese bestehen aus bekannten Input-Output Paaren. Der gewünschte Output eines solchen Paares wird auch Label genannt."
+},
+{
+	"id": "q5",
+	"question": "Beim Thema KI wird oft über 'starke' und 'schwache' KI gesprochen. Was genau ist eine schwache KI?",
+	"answers" : ["Sie löst ein Problem langsamer als der Mensch", "Sie löst nur konkrete Anwendungsprobleme", "Sie arbeitet 'smarte' Trainingspläne aus", "Ein intelligenter Roboter mit reduziertem Stromverbrauch"],
+	"correct_answer" : 1,
+	"explanation" : "Eine schwache KI wurde zur Lösung konkreter Anwendungsprobleme entwickelt und optimiert. Sie entwickelt dabei kein tiefgehendes Verständnis für die Problemlösung."
+},
+{
+	"id": "q6",
+	"question": "Im Alltag nutzen wir Sprachassistenten wie Siri oder Alexa. Als erstes Programm zur Mensch-Maschine-Kommunikation gilt 'Eliza'. Wann wurde es entwickelt?",
+	"answers" : ["2018", "1966", "1982", "2010"],
+	"correct_answer" : 1,
+	"explanation" : "Bereits 1966 entwickelte Joseph Weizenbaum ein Computerprogramm, das man heute als Chatbot bezeichnet. Interessanterweise nutzte er den Chatbot um einen Psychotherapeuten als Gesprächspartner zu simulieren."
 }
 ]
