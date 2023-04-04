@@ -18,9 +18,9 @@ class_name QuestionScene
 
 @onready var progress_label = $VBoxContainer/Progress
 
-var choices = []
 var current_question_resource : QuestionResource
-var question_answers : Array # shuffled array with options
+var choice_permutation : Array[int] # shuffled array for choices
+var choices = []
 
 func _ready():
 	choices = [choice_a, choice_b, choice_c, choice_d]
@@ -46,13 +46,12 @@ func update_question():
 	
 	# Update the choices
 	# First, we shuffle the order of the choices
-	question_answers = current_question_resource.answers.duplicate()
-	#var answer = question_answers[current_question_resource.correct_answer]
-	question_answers.shuffle()
-	choice_a.get_node("Label").text = question_answers[0]
-	choice_b.get_node("Label").text = question_answers[1]
-	choice_c.get_node("Label").text = question_answers[2]
-	choice_d.get_node("Label").text = question_answers[3]
+	choice_permutation = [0,1,2,3]
+	choice_permutation.shuffle()
+	choice_a.get_node("Label").text = current_question_resource.answers[choice_permutation[0]]
+	choice_b.get_node("Label").text = current_question_resource.answers[choice_permutation[1]]
+	choice_c.get_node("Label").text = current_question_resource.answers[choice_permutation[2]]
+	choice_d.get_node("Label").text = current_question_resource.answers[choice_permutation[3]]
 	
 	
 func _on_choice_pressed(choice : int):
@@ -61,9 +60,15 @@ func _on_choice_pressed(choice : int):
 	# Disable the buttons.
 	for button in choices:
 		button.disabled = true
-		
-	var correct = QuizManager.check_result(question_answers[choice])
+	
+	var choice_index = choice_permutation[choice]
+	QuizManager.report_result(choice_index)
+	var correct = choice_index == current_question_resource.correct_answer
+	
 	var tween = choices[choice].animate_result(correct)
+	if not correct:
+		var correct_index = choice_permutation.find(current_question_resource.correct_answer)
+		choices[correct_index].animate_result(true)
 	await tween.finished
 	
 	tween = create_tween()

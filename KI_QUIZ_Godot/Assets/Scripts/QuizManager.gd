@@ -62,14 +62,12 @@ func get_current_question_resource():
 	return questions_selected[active_question_ind]
 	
 	
-func check_result(answer : String):
+func report_result(choice : int):
 	var current_question = questions_selected[active_question_ind]
-	var answer_ind = current_question.answers.find(answer)
 	var correct_answer_ind = current_question.correct_answer
-	current_question_correct = answer_ind == correct_answer_ind
+	current_question_correct = choice == correct_answer_ind
 	if current_question_correct:
 		points += 1
-	return current_question_correct
 		
 		
 func get_result():

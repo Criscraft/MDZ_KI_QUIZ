@@ -38,8 +38,9 @@ autowrap_mode = 3
 [node name="Explanation" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+size_flags_stretch_ratio = 2.5
 theme_override_font_sizes/font_size = 28
-text = "Hier erscheint eine kurze Erklärung zu der vorherigen Frage."
+text = "Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage."
 horizontal_alignment = 1
 autowrap_mode = 3
 

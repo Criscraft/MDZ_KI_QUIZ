@@ -25,7 +25,7 @@
 	"question": "Supervised Learning ist geprägt von:",
 	"answers" : ["einem Agenten", "Trainingsdaten ohne Labels", "Trainingsdaten mit Labels", "der Nutzung der Testdaten für's Training"],
 	"correct_answer" : 2,
-	"explanation" : "Beim Supervised Learning trainiert man eine Maschine mit Trainingsdaten. Diese bestehen aus bekannten Input-Output Paaren. Der gewünschte Output eines solchen Paares wird auch Label genannt."
+	"explanation" : "Beim Supervised Learning trainiert man eine Maschine mit Trainingsdaten. Diese bestehen aus bekannten Input-Output Paaren. Der gewünschte Output eines solchen Paares wird oft Label genannt."
 },
 {
 	"id": "q5",
@@ -40,5 +40,12 @@
 	"answers" : ["2018", "1966", "1982", "2010"],
 	"correct_answer" : 1,
 	"explanation" : "Bereits 1966 entwickelte Joseph Weizenbaum ein Computerprogramm, das man heute als Chatbot bezeichnet. Interessanterweise nutzte er den Chatbot um einen Psychotherapeuten als Gesprächspartner zu simulieren."
+},
+{
+	"id": "q7",
+	"question": "KIs werden meist in zwei Bereiche unterteilt. \n Welche sind das?",
+	"answers" : ["konservative und liberale KI", "starke und schwache KI", "große und kleine KI", "traditionelle und neue KI"],
+	"correct_answer" : 1,
+	"explanation" : "Eine starke KI wäre in der Lage intellektuelle Aufgaben zu verstehen oder zu lernen, die auch ein Mensch in der Lage ist zu lösen. Davon sind wir noch Jahrzehnte entfernt."
 }
 ]
