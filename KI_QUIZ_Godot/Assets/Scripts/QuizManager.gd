@@ -36,7 +36,7 @@ func dict_to_question_resource(dic : Dictionary):
 func _ready():
 	var question_file = load_json(question_file_path)
 	
-	for item in question_file:
+	for item in question_file["questions"]:
 		question_resources.append(dict_to_question_resource(item))
 
 

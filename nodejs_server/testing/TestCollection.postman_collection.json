@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "5e38f94b-b9fb-41a7-b80e-7268be48fa37",
+		"name": "MayFirstCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MyFirstGetRequest",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "startgame",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quizevent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question_id\" : \"q0\",\r\n    \"gamesession_id\" : 1,\r\n    \"option_chosen\" : 0,\r\n    \"option_correct\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quizevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizevent"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
