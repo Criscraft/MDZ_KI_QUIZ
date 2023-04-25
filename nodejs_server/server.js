@@ -15,18 +15,19 @@ app.get('/startgame/jsonVersion/:jsonVersion', async (req, res) => {
     var game_session_id = await db.register_gamesession(req.params["jsonVersion"]);
     res.status(200);
     // console.log(game_session_id);
-    res.send(String(game_session_id));
+    console.log(String(game_session_id))
+    res.send({"topic" : "startgame", "game_session_id" : String(game_session_id)});
 });
 
 
 app.post('/quizevent', async (req, res) => {
     console.log(req.body);
     
-    var myjson = req.body;
+    var myjson = req.body; // Express automatically converts the body into json.
     console.log(myjson);
     await db.process_quizevent(myjson["question_id"], myjson["gamesession_id"], myjson["option_chosen"], myjson["option_correct"])
     res.status(200);
-    res.send('Quizevent registered.');
+    res.send({"topic" : "Quizevent registered"});
 });
 
 
@@ -36,8 +37,8 @@ app.post('/quizevent', async (req, res) => {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
         
-        await sequelize.sync({ force: true });
-        console.log("All models were synchronized successfully.");
+        //await sequelize.sync({ force: true });
+        //console.log("All models were synchronized successfully.");
 
         app.listen(port, () => {
             console.log(`Example app listening on port ${port}`)
