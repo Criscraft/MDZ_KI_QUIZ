@@ -44,13 +44,11 @@ Die Zeit ist jetzt genau richtig: Rufen Sie uns an oder schreiben Sie uns!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Teaser"]
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer"]
 light_mask = 0
 layout_mode = 2
-offset_left = 514.0
-offset_top = 174.0
-offset_right = 623.0
-offset_bottom = 216.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 tooltip_text = "Kontakt aufnehmen für Unterstützung zu KI-Themen"
 theme = ExtResource("2_nwc2g")
 theme_override_fonts/font = ExtResource("3_glt6t")
