@@ -37,11 +37,11 @@ vertical_alignment = 1
 [node name="Teaser" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
+text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 
-[color=#cd0a1e][url=https://www.digitalzentrum-sh.de/veranstaltungen]Melden Sie sich zu einem unserer wertvollen Workshops an[/url][/color], besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen. 
+Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen. 
 
-Die Zeit ist jetzt genau richtig: Rufen Sie uns an oder schreiben Sie uns!"
+Die Zeit ist jetzt genau richtig: [color=#cd0a1e][url=https://www.digitalzentrum-sh.de/kontakt]Rufen Sie uns an oder schreiben Sie uns![/url][/color][/center]"
 fit_content = true
 scroll_active = false
 script = ExtResource("2_7o7gm")
