@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq42742m4ucjb"]
+[gd_scene load_steps=5 format=3 uid="uid://dq42742m4ucjb"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/final_result_scene.gd" id="2_6kg7d"]
+[ext_resource type="Theme" uid="uid://b6fnl6anohg2n" path="res://Assets/ThemesAndFonts/mdz_theme.tres" id="2_nwc2g"]
+[ext_resource type="FontFile" uid="uid://y4wur85px8tt" path="res://Assets/ThemesAndFonts/OpenSans-VariableFont_wdth,wght.ttf" id="3_glt6t"]
 [ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ojem3"]
 
 [node name="FinalResultScene" type="Control"]
@@ -36,16 +38,27 @@ vertical_alignment = 1
 [node name="Teaser" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
-
-Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen. 
+text = "Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen. Wir helfen Ihnen!
 
 Die Zeit ist jetzt genau richtig: Rufen Sie uns an oder schreiben Sie uns!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer"]
+light_mask = 0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Kontakt aufnehmen für Unterstützung zu KI-Themen"
+theme = ExtResource("2_nwc2g")
+theme_override_fonts/font = ExtResource("3_glt6t")
+theme_override_font_sizes/font_size = 30
+text = "Kontakt"
+uri = "https://www.digitalzentrum-sh.de/kontakt"
+
 [node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource("3_ojem3")]
 layout_mode = 2
+size_flags_vertical = 8
 text = "Neues Quiz!"
 scene_base = NodePath("../..")
 target_scene_path = "res://Scenes/start_scene.tscn"
