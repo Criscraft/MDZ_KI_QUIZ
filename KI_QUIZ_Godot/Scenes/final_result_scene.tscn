@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq42742m4ucjb"]
+[gd_scene load_steps=4 format=3 uid="uid://dq42742m4ucjb"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/final_result_scene.gd" id="2_6kg7d"]
-[ext_resource type="Theme" uid="uid://b6fnl6anohg2n" path="res://Assets/ThemesAndFonts/mdz_theme.tres" id="2_nwc2g"]
-[ext_resource type="FontFile" uid="uid://y4wur85px8tt" path="res://Assets/ThemesAndFonts/OpenSans-VariableFont_wdth,wght.ttf" id="3_glt6t"]
+[ext_resource type="Script" path="res://Assets/Scripts/richtextlabel_url_clicker.gd" id="2_7o7gm"]
 [ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ojem3"]
 
 [node name="FinalResultScene" type="Control"]
@@ -35,14 +34,17 @@ text = "Sie haben x von y Fragen richtig beantwortet."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Teaser" type="Label" parent="VBoxContainer"]
+[node name="Teaser" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen. Wir helfen Ihnen!
+bbcode_enabled = true
+text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 
-Die Zeit ist jetzt genau richtig: Rufen Sie uns an oder schreiben Sie uns!"
-horizontal_alignment = 1
-autowrap_mode = 3
+Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen!
+
+Die Zeit ist jetzt genau richtig: [color=#cd0a1e][url=https://www.digitalzentrum-sh.de/kontakt]Rufen Sie uns an oder schreiben Sie uns![/url][/color][/center]"
+fit_content = true
+scroll_active = false
+script = ExtResource("2_7o7gm")
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer"]
 light_mask = 0
@@ -62,3 +64,5 @@ size_flags_vertical = 8
 text = "Neues Quiz!"
 scene_base = NodePath("../..")
 target_scene_path = "res://Scenes/start_scene.tscn"
+
+[connection signal="meta_clicked" from="VBoxContainer/Teaser" to="VBoxContainer/Teaser" method="_richtextlabel_on_meta_clicked"]

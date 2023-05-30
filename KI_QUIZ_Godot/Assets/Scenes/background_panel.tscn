@@ -7,10 +7,6 @@ border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
 border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="BackgroundPanel" type="Panel"]
 anchors_preset = 15

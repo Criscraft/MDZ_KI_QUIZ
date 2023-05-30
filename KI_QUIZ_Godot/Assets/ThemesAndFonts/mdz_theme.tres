@@ -9,10 +9,6 @@ border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
 border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhjh3"]
 bg_color = Color(0.835294, 0.835294, 0.835294, 1)
@@ -21,10 +17,6 @@ border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
 border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euud4"]
 bg_color = Color(1, 1, 1, 1)
@@ -33,20 +25,17 @@ border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
 border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan78"]
 
 [resource]
 default_font = ExtResource("1_yyg6u")
 default_font_size = 32
-Button/colors/font_color = Color(0.803922, 0.0392157, 0.117647, 1)
-Button/colors/font_hover_color = Color(0.803922, 0.0392157, 0.117647, 1)
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_vpwoa")
 Button/styles/hover = SubResource("StyleBoxFlat_mhjh3")
 Button/styles/normal = SubResource("StyleBoxFlat_euud4")
 Button/styles/pressed = SubResource("StyleBoxFlat_uan78")
-Label/colors/font_color = Color(0.803922, 0.0392157, 0.117647, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
