@@ -53,10 +53,8 @@ func _ready():
 
 
 func _on_request_completed(result, response_code, headers, body):
-	#print(result)
-	#print(response_code)
-	#print(headers)
-	#print(body.get_string_from_utf8())
+	if response_code != 200:
+		return
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	if json["topic"] == "startgame":
 		game_session_id = json["game_session_id"]

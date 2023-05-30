@@ -46,18 +46,6 @@ fit_content = true
 scroll_active = false
 script = ExtResource("2_7o7gm")
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer"]
-light_mask = 0
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-tooltip_text = "Kontakt aufnehmen für Unterstützung zu KI-Themen"
-theme = ExtResource("2_nwc2g")
-theme_override_fonts/font = ExtResource("3_glt6t")
-theme_override_font_sizes/font_size = 30
-text = "Kontakt"
-uri = "https://www.digitalzentrum-sh.de/kontakt"
-
 [node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource("3_ojem3")]
 layout_mode = 2
 size_flags_vertical = 8
