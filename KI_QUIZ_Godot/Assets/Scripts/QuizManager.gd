@@ -1,6 +1,6 @@
 extends Node
 
-@export var question_file_path : String = "Data/quiz_questions.json"
+@export var question_file_path : String = "res://Data/quiz_questions.json"
 @export var game_running : bool = false
 
 var url_base : String = "http://localhost:3000/"
