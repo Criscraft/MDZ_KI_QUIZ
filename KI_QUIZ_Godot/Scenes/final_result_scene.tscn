@@ -1,56 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq42742m4ucjb"]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource type="Script" path="res://Assets/Scripts/final_result_scene.gd" id="2_6kg7d"]
-[ext_resource type="Script" path="res://Assets/Scripts/richtextlabel_url_clicker.gd" id="2_7o7gm"]
-[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ojem3"]
+[ext_resource path="res://Assets/Scenes/change_scene_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/final_result_scene.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/richtextlabel_url_clicker.gd" type="Script" id=3]
 
 [node name="FinalResultScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_6kg7d")
+script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
+custom_constants/separation = 30
+alignment = 1
 
-[node name="ResultLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Header" type="Label" parent="VBoxContainer"]
+margin_top = 61.0
+margin_right = 1024.0
+margin_bottom = 95.0
 text = "Herzlichen Glückwunsch!"
-horizontal_alignment = 1
-vertical_alignment = 1
+align = 1
 
 [node name="Score" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+margin_top = 125.0
+margin_right = 1024.0
+margin_bottom = 159.0
 text = "Sie haben x von y Fragen richtig beantwortet."
-horizontal_alignment = 1
-vertical_alignment = 1
+align = 1
 
-[node name="Teaser" type="RichTextLabel" parent="VBoxContainer"]
-layout_mode = 2
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 189.0
+margin_right = 1024.0
+margin_bottom = 434.0
 bbcode_enabled = true
-text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
+bbcode_text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 
 Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen!
 
 Die Zeit ist jetzt genau richtig: [color=#cd0a1e][url=https://www.digitalzentrum-sh.de/kontakt]Rufen Sie uns an oder schreiben Sie uns![/url][/color][/center]"
-fit_content = true
-scroll_active = false
-script = ExtResource("2_7o7gm")
+text = "Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 
-[node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource("3_ojem3")]
-layout_mode = 2
-size_flags_vertical = 8
-text = "Neues Quiz!"
+Melden Sie sich zu einem unserer wertvollen Workshops an, besuchen Sie die Digitale Fabrik oder lassen Sie sich individuell unterstützen!
+
+Die Zeit ist jetzt genau richtig: Rufen Sie uns an oder schreiben Sie uns!"
+fit_content_height = true
+scroll_active = false
+script = ExtResource( 3 )
+
+[node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_top = 464.0
+margin_right = 712.0
+margin_bottom = 539.0
+rect_min_size = Vector2( 400, 75 )
+size_flags_horizontal = 4
+text = "Neues Quiz mit zufälligen Fragen!"
 scene_base = NodePath("../..")
 target_scene_path = "res://Scenes/start_scene.tscn"
 
-[connection signal="meta_clicked" from="VBoxContainer/Teaser" to="VBoxContainer/Teaser" method="_richtextlabel_on_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/RichTextLabel" to="VBoxContainer/RichTextLabel" method="_richtextlabel_on_meta_clicked"]

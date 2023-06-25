@@ -1,16 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkf5ubs36nd0a"]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource type="Script" path="res://Assets/Scripts/change_scene_button.gd" id="1_4neu0"]
+[ext_resource path="res://Assets/Scripts/change_scene_button.gd" type="Script" id=1]
 
 [node name="ChangeSceneButton" type="Button"]
-custom_minimum_size = Vector2(400, 100)
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Text"
-script = ExtResource("1_4neu0")
+text = "Change Scene"
+script = ExtResource( 1 )
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,11 +1,12 @@
 extends VBoxContainer
 
-@export var screen_width_threshold : int = 900
-@onready var grid_container = $CenterContainer/GridContainer
+export var screen_width_threshold : int = 900
+onready var grid_container = $CenterContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var error = get_viewport().size_changed.connect(on_viewport_resize)
+	var _error = get_viewport().connect("size_changed", self, "on_viewport_resize")
+	on_viewport_resize()
 	
 
 func on_viewport_resize():

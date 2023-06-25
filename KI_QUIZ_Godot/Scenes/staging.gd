@@ -10,12 +10,12 @@ func _on_load_scene(p_scene_path : String):
 	load_scene(p_scene_path)
 	
 func _add_signals(p_scene : SceneBase):
-	p_scene.exit_to_main_menu.connect(_on_exit_to_main_menu)
-	p_scene.load_scene.connect(_on_load_scene)
+	p_scene.connect("exit_to_main_menu", self, "_on_exit_to_main_menu")
+	p_scene.connect("load_scene", self, "_on_load_scene")
 
 func _remove_signals(p_scene : SceneBase):
-	p_scene.exit_to_main_menu.disconnect(_on_exit_to_main_menu)
-	p_scene.load_scene.disconnect(_on_load_scene)
+	p_scene.disconnect("exit_to_main_menu", self, "_on_exit_to_main_menu")
+	p_scene.disconnect("load_scene", self, "_on_load_scene")
 
 func load_scene(p_scene_path : String):
 	# Check if it's already loaded...
@@ -31,7 +31,6 @@ func load_scene(p_scene_path : String):
 		# Fade to loading screen
 		var tween = create_tween()
 		tween.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-		await tween.finished
 		
 		# Now we remove our scene
 		current_scene.scene_exiting()
@@ -43,16 +42,16 @@ func load_scene(p_scene_path : String):
 	var new_scene = load(p_scene_path)
 	
 	# Setup our new scene
-	current_scene = new_scene.instantiate()
+	current_scene = new_scene.instance()
 	current_scene_path = p_scene_path
 	$Scene.add_child(current_scene)
 	_add_signals(current_scene)
 	current_scene.scene_loaded()
 	
 	# Fade to visible
-	var tween = create_tween()
+	var tween = get_tree().create_tween()
 	tween.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0)
-	await tween.finished
+	yield(tween, "finished")
 
 func _ready():
 	# We start by loading our start scene

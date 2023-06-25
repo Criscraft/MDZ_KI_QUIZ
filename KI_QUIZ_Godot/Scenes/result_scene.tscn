@@ -1,51 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://crn7utkkifup5"]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource type="Script" path="res://Scenes/result_scene.gd" id="2_2ragr"]
-[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="3_ei51b"]
+[ext_resource path="res://Scenes/result_scene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scenes/change_scene_button.tscn" type="PackedScene" id=2]
 
 [node name="ResultScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_2ragr")
+script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
+custom_constants/separation = 30
+alignment = 1
 
 [node name="ResultLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
+margin_top = 166.0
+margin_right = 1024.0
+margin_bottom = 200.0
 text = "Ergebnis. Die richtige Antwortet lautet:"
-horizontal_alignment = 1
-vertical_alignment = 1
+align = 1
 
 [node name="CorrectAnswer" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
+margin_top = 230.0
+margin_right = 1024.0
+margin_bottom = 264.0
 text = "Wiederholung der korrekten Antwort."
-horizontal_alignment = 1
-autowrap_mode = 3
+align = 1
+autowrap = true
 
 [node name="Explanation" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-size_flags_stretch_ratio = 2.5
-theme_override_font_sizes/font_size = 28
-text = "Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage. Hier erscheint eine kurze Erklärung zu der vorherigen Frage."
-horizontal_alignment = 1
-autowrap_mode = 3
+margin_top = 294.0
+margin_right = 1024.0
+margin_bottom = 328.0
+text = "Eine nette Erklärung."
+align = 1
+autowrap = true
 
-[node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource("3_ei51b")]
-layout_mode = 2
-size_flags_vertical = 6
+[node name="ChangeSceneButton" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_top = 358.0
+margin_right = 712.0
+margin_bottom = 433.0
+rect_min_size = Vector2( 400, 75 )
+size_flags_horizontal = 4
 text = "Zur nächsten Frage!"
 scene_base = NodePath("../..")

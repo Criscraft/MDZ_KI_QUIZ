@@ -1,47 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://3iqfdw2jsj5w"]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource type="Script" path="res://Scenes/scene_base.gd" id="1_7iwcw"]
-[ext_resource type="PackedScene" uid="uid://bkf5ubs36nd0a" path="res://Assets/Scenes/change_scene_button.tscn" id="2_fjwba"]
-[ext_resource type="Script" path="res://Assets/Scripts/start_quiz_button.gd" id="3_euat5"]
+[ext_resource path="res://Assets/Scripts/start_quiz_button.gd" type="Script" id=1]
+[ext_resource path="res://Assets/ThemesAndFonts/opensans_dynamicfont_title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/scene_base.gd" type="Script" id=3]
 
 [node name="StartScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_7iwcw")
+script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 60
+custom_constants/separation = 60
 alignment = 1
 
 [node name="Header" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 64
-text = "Wie viel wissen Sie bereits zum Thema künstliche Intelligenz?"
-horizontal_alignment = 1
-autowrap_mode = 3
+margin_top = 101.0
+margin_right = 1024.0
+margin_bottom = 270.0
+custom_fonts/font = ExtResource( 2 )
+text = "Wie viel wissen Sie bereits zum
+Thema Künstliche Intelligenz?"
+align = 1
+autowrap = true
 
 [node name="SubHeader" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_type_variation = &"HeaderSmall"
-text = "Finden Sie es jetzt heraus und erhalten Sie das Ergebnis!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+margin_top = 330.0
+margin_right = 1024.0
+margin_bottom = 364.0
+text = "Finden Sie es jetzt heraus und finden Sie das Ergebnis!"
+align = 1
+autowrap = true
 
-[node name="StartQuizButton" parent="VBoxContainer" instance=ExtResource("2_fjwba")]
-layout_mode = 2
+[node name="StartQuizButton" type="Button" parent="VBoxContainer"]
+margin_left = 387.0
+margin_top = 424.0
+margin_right = 637.0
+margin_bottom = 499.0
+rect_min_size = Vector2( 250, 75 )
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Quiz starten!"
-script = ExtResource("3_euat5")
+script = ExtResource( 1 )
 scene_base = NodePath("../..")
+
+[connection signal="pressed" from="VBoxContainer/StartQuizButton" to="VBoxContainer/StartQuizButton" method="_on_pressed"]

@@ -1,12 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://q8rvj5qgf7yy"]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource type="Script" path="res://Scenes/scene_base.gd" id="1_rmbeh"]
+[ext_resource path="res://Scenes/scene_base.gd" type="Script" id=1]
 
-[node name="SceneBase" type="Control"]
-layout_mode = 3
-anchors_preset = 15
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_rmbeh")
+script = ExtResource( 1 )

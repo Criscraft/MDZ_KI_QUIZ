@@ -1,15 +1,15 @@
 extends SceneBase
 class_name ResultScene
 
-@onready var result_label = $VBoxContainer/ResultLabel
-@onready var correct_answer_label = $VBoxContainer/CorrectAnswer
-@onready var explanation_label = $VBoxContainer/Explanation
-@onready var change_scene_button = $VBoxContainer/ChangeSceneButton
+onready var result_label = $VBoxContainer/ResultLabel
+onready var correct_answer_label = $VBoxContainer/CorrectAnswer
+onready var explanation_label = $VBoxContainer/Explanation
+onready var change_scene_button = $VBoxContainer/ChangeSceneButton
 
-@export var question_scene_path : String = "res://Scenes/question_scene.tscn"
-@export var final_result_scene_path : String = "res://Scenes/final_result_scene.tscn"
+export var question_scene_path : String = "res://Scenes/question_scene.tscn"
+export var final_result_scene_path : String = "res://Scenes/final_result_scene.tscn"
 
-var current_question_resource : QuestionResource
+var current_question_resource : Resource
 
 
 func scene_loaded():

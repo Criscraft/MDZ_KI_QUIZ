@@ -2,24 +2,24 @@ extends SceneBase
 class_name QuestionScene
 
 ## Scene base for the current scene
-@export var scene_base: NodePath
+export var scene_base: NodePath
 
 ## Scene to teleport to, or none for main menu
-@export var scene: PackedScene
+export var scene: PackedScene
 
 # Scene base to trigger loading
-@onready var _scene_base : SceneBase = get_node(scene_base)
+onready var _scene_base : SceneBase = get_node(scene_base)
 
-@onready var question_label = $VBoxContainer/Question
-@onready var choice_a = $VBoxContainer/CenterContainer/GridContainer/ChoiceA
-@onready var choice_b = $VBoxContainer/CenterContainer/GridContainer/ChoiceB
-@onready var choice_c = $VBoxContainer/CenterContainer/GridContainer/ChoiceC
-@onready var choice_d = $VBoxContainer/CenterContainer/GridContainer/ChoiceD
+onready var question_label = $VBoxContainer/Question
+onready var choice_a = $VBoxContainer/CenterContainer/GridContainer/ChoiceA
+onready var choice_b = $VBoxContainer/CenterContainer/GridContainer/ChoiceB
+onready var choice_c = $VBoxContainer/CenterContainer/GridContainer/ChoiceC
+onready var choice_d = $VBoxContainer/CenterContainer/GridContainer/ChoiceD
 
-@onready var progress_label = $VBoxContainer/Progress
+onready var progress_label = $VBoxContainer/Progress
 
 var current_question_resource : QuestionResource
-var choice_permutation : Array[int] # shuffled array for choices
+var choice_permutation : Array # shuffled array for choices
 var choices = []
 
 func _ready():
@@ -69,11 +69,8 @@ func _on_choice_pressed(choice : int):
 	if not correct:
 		var correct_index = choice_permutation.find(current_question_resource.correct_answer)
 		choices[correct_index].animate_result(true)
-	await tween.finished
-	
-	tween = create_tween()
-	tween.tween_property(self, "", null, 1.0)
-	await tween.finished
+	tween.tween_property(self, "", null, 0.75)
+	yield(tween, "finished")
 	
 	# Initiate loading of result scene
 	if not _scene_base:
@@ -82,5 +79,4 @@ func _on_choice_pressed(choice : int):
 		_scene_base.emit_signal("load_scene", scene.resource_path)
 	else:
 		_scene_base.emit_signal("exit_to_main_menu")
-
-	
+		

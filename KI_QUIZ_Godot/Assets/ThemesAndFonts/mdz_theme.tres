@@ -1,41 +1,23 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b6fnl6anohg2n"]
+[gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource type="FontFile" uid="uid://y4wur85px8tt" path="res://Assets/ThemesAndFonts/OpenSans-VariableFont_wdth,wght.ttf" id="1_yyg6u"]
+[ext_resource path="res://Assets/ThemesAndFonts/mdz_styleboxflat.tres" type="StyleBox" id=1]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpwoa"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id=1]
 border_width_left = 7
 border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
-border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhjh3"]
-bg_color = Color(0.835294, 0.835294, 0.835294, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euud4"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.803922, 0.0392157, 0.117647, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan78"]
+border_color = Color( 0.803922, 0.0392157, 0.117647, 1 )
 
 [resource]
-default_font = ExtResource("1_yyg6u")
-default_font_size = 32
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/styles/disabled = SubResource("StyleBoxFlat_vpwoa")
-Button/styles/hover = SubResource("StyleBoxFlat_mhjh3")
-Button/styles/normal = SubResource("StyleBoxFlat_euud4")
-Button/styles/pressed = SubResource("StyleBoxFlat_uan78")
-Label/colors/font_color = Color(0, 0, 0, 1)
-RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/focus = ExtResource( 1 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = ExtResource( 1 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )

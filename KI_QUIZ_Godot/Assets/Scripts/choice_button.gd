@@ -1,7 +1,7 @@
 extends Button
 
-@export var color_correct : Color
-@export var color_incorrect : Color
+export var color_correct : Color
+export var color_incorrect : Color
 
 
 func animate_result(correct : bool):

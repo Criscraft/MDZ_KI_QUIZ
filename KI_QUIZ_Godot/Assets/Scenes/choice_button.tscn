@@ -1,29 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgl3j2imqb088"]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource type="Script" path="res://Assets/Scripts/choice_button.gd" id="1_718x5"]
+[ext_resource path="res://Assets/Scripts/choice_button.gd" type="Script" id=1]
 
-[node name="ChoiceButton" type="Button"]
-custom_minimum_size = Vector2(500, 100)
-anchors_preset = 15
+[node name="Button" type="Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("1_718x5")
-color_correct = Color(0.784314, 1, 0.784314, 1)
-color_incorrect = Color(1, 0.784314, 0.784314, 1)
+rect_min_size = Vector2( 500, 100 )
+script = ExtResource( 1 )
+color_correct = Color( 0.784314, 1, 0.784314, 1 )
+color_incorrect = Color( 1, 0.784314, 0.784314, 1 )
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "A"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 3
+text = "Option A"
+align = 1
+valign = 1
+autowrap = true

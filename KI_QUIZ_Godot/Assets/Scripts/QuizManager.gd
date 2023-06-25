@@ -1,32 +1,30 @@
 extends Node
 
-@export var question_file_path : String = "res://Data/quiz_questions.json"
-@export var game_running : bool = false
+export var question_file_path : String = "res://Data/quiz_questions.json"
+export var game_running : bool = false
 
 var url_base : String = "http://localhost:3000/"
 var url_start_game : String = url_base + "startgame/jsonVersion/"
 var url_quizevent : String = url_base + "quizevent"
 
-var questions_selected : Array[QuestionResource]
+var questions_selected : Array
 var points : int = 0
 var active_question_ind : int = -1
-var question_resources : Array[QuestionResource]
+var question_resources : Array
 var current_question_correct : bool
 var http_requester : HTTPRequest = null
 var json_version : String = ""
 var game_session_id : String = ""
 
 func load_json(path):
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file = File.new()
+	file.open(path, File.READ)
 	var content = file.get_as_text()
-	var json = JSON.new()
-	var error = json.parse(content)
-	if error == OK:
-		return json.data
-	else:
-		print("JSON Parse Error: ", json.get_error_message(), " in ", content, " at line ", json.get_error_line())
-		return
-
+	file.close()
+	
+	var p = JSON.parse(content)
+	return p.result
+		
 	
 func dict_to_question_resource(dic : Dictionary):
 	var question_resource = QuestionResource.new()
@@ -49,7 +47,7 @@ func _ready():
 		
 	http_requester = HTTPRequest.new()
 	add_child(http_requester)
-	http_requester.request_completed.connect(_on_request_completed)
+	http_requester.connect("request_completed", self, "_on_request_completed")
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -67,7 +65,7 @@ func start_new_game(n_questions : int = 2):
 		return
 	game_running = true
 	print(url_start_game + json_version)
-	http_requester.request(url_start_game + json_version, [], HTTPClient.METHOD_GET, "")
+	http_requester.request(url_start_game + json_version, [], true, HTTPClient.METHOD_GET, "")
 	
 	question_resources.shuffle()
 	questions_selected = question_resources.slice(0, n_questions)
