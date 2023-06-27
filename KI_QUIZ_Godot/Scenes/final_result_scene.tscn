@@ -16,23 +16,25 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="Header" type="Label" parent="VBoxContainer"]
-margin_top = 61.0
+margin_top = 166.0
 margin_right = 1024.0
-margin_bottom = 95.0
+margin_bottom = 180.0
 text = "Herzlichen Glückwunsch!"
 align = 1
+autowrap = true
 
 [node name="Score" type="Label" parent="VBoxContainer"]
-margin_top = 125.0
+margin_top = 210.0
 margin_right = 1024.0
-margin_bottom = 159.0
+margin_bottom = 224.0
 text = "Sie haben x von y Fragen richtig beantwortet."
 align = 1
+autowrap = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
-margin_top = 189.0
+margin_top = 254.0
 margin_right = 1024.0
-margin_bottom = 434.0
+margin_bottom = 329.0
 bbcode_enabled = true
 bbcode_text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 
@@ -52,9 +54,9 @@ script = ExtResource( 3 )
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 312.0
-margin_top = 464.0
+margin_top = 359.0
 margin_right = 712.0
-margin_bottom = 539.0
+margin_bottom = 434.0
 rect_min_size = Vector2( 400, 75 )
 size_flags_horizontal = 4
 text = "Neues Quiz mit zufälligen Fragen!"

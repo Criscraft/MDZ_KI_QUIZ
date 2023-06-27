@@ -18,40 +18,40 @@ anchor_bottom = 1.0
 custom_constants/separation = 30
 alignment = 1
 script = ExtResource( 2 )
-screen_width_threshold = 1050
 
 [node name="Progress" type="Label" parent="VBoxContainer"]
+margin_top = 159.0
 margin_right = 1024.0
-margin_bottom = 34.0
+margin_bottom = 173.0
 text = "Frage x von x"
 align = 1
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
-margin_top = 64.0
+margin_top = 203.0
 margin_right = 1024.0
-margin_bottom = 68.0
+margin_bottom = 207.0
 rect_min_size = Vector2( 0, 4 )
 color = Color( 0.803922, 0.0392157, 0.117647, 1 )
 
 [node name="Question" type="Label" parent="VBoxContainer"]
-margin_top = 212.0
+margin_top = 237.0
 margin_right = 1024.0
-margin_bottom = 246.0
-size_flags_vertical = 6
+margin_bottom = 251.0
+size_flags_vertical = 1
 text = "Frage"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 390.0
+margin_top = 281.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 441.0
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
-margin_left = 7.0
-margin_right = 1017.0
-margin_bottom = 210.0
+margin_left = 207.0
+margin_right = 817.0
+margin_bottom = 160.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 2
@@ -59,30 +59,30 @@ columns = 2
 [node name="ChoiceA" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 500.0
-margin_bottom = 100.0
+margin_right = 300.0
+margin_bottom = 75.0
 
 [node name="ChoiceB" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 510.0
-margin_right = 1010.0
-margin_bottom = 100.0
+margin_left = 310.0
+margin_right = 610.0
+margin_bottom = 75.0
 
 [node name="ChoiceC" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 110.0
-margin_right = 500.0
-margin_bottom = 210.0
+margin_top = 85.0
+margin_right = 300.0
+margin_bottom = 160.0
 
 [node name="ChoiceD" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 510.0
-margin_top = 110.0
-margin_right = 1010.0
-margin_bottom = 210.0
+margin_left = 310.0
+margin_top = 85.0
+margin_right = 610.0
+margin_bottom = 160.0
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/ChoiceA" to="." method="_on_choice_pressed" binds= [ 0 ]]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/ChoiceB" to="." method="_on_choice_pressed" binds= [ 1 ]]

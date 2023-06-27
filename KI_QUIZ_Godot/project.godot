@@ -55,8 +55,6 @@ QuizManager="*res://Assets/Scripts/QuizManager.gd"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
-theme/custom="res://Assets/ThemesAndFonts/mdz_theme.tres"
-theme/custom_font="res://Assets/ThemesAndFonts/opensans_dynamicfont.tres"
 
 [physics]
 
