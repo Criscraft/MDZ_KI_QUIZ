@@ -17,13 +17,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = ExtResource( 3 )
 
-[node name="Scene" type="Control" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 75.0
+margin_top = 80.0
 margin_right = -10.0
 margin_bottom = -10.0
+scroll_horizontal_enabled = false
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+margin_right = 1004.0
+margin_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="LoadingScreen" type="Panel" parent="."]
 anchor_right = 1.0

@@ -9,7 +9,7 @@ signal exit_to_main_menu
 signal load_scene
 
 func scene_loaded():
-	# Called after scene is loaded
+	#rect_min_size.y = $VBoxContainer.rect_size.y
 	pass
 
 func scene_exiting():

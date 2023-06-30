@@ -1,9 +1,9 @@
 extends VBoxContainer
 
 export var screen_width_threshold_for_column : int = 1050
-export var screen_width_threshold_min_for_option_size : int = 350
+export var screen_width_threshold_min_for_option_size : int = 300
 export var screen_width_threshold_max_for_option_size : int = 550
-export var option_size_small = 300
+export var option_size_small = 250
 export var option_size_large = 500
 onready var grid_container = $CenterContainer/GridContainer
 

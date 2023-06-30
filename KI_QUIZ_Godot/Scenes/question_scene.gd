@@ -28,6 +28,7 @@ func _ready():
 	
 func scene_loaded():
 	# Called after scene is loaded
+	.scene_loaded()
 	# Get the next question
 	current_question_resource = QuizManager.get_next_question_resource()
 	# Apply the question

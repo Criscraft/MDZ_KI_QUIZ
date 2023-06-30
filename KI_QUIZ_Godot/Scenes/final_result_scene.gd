@@ -1,11 +1,12 @@
 extends SceneBase
 class_name FinalResultScene
 
-onready var score_label = $VBoxContainer/Score
+onready var score_label = $Score
 
 
 func scene_loaded():
 	# Called after scene is loaded
+	.scene_loaded()
 	# Apply the question
 	update_results()
 	QuizManager.end_game()

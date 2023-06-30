@@ -3,11 +3,11 @@ extends Node
 var standard_font = preload("res://Assets/ThemesAndFonts/opensans_dynamicfont.tres")
 var title_font = preload("res://Assets/ThemesAndFonts/opensans_dynamicfont_title.tres")
 
-export var screen_width_threshold_min : int = 350
+export var screen_width_threshold_min : int = 300
 export var screen_width_threshold_max : int = 1000
-export var font_size_small = 15
+export var font_size_small = 12
 export var font_size_large = 30
-export var font_size_title_small = 30
+export var font_size_title_small = 26
 export var font_size_title_large = 60
 
 func _ready():
