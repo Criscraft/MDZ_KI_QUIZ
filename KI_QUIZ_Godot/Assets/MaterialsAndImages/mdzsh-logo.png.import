@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BMWi_Fz_2017_Office_Farbe_de.png-f1a58e8aea1597c76d2499e9d144b529.stex"
+path="res://.import/mdzsh-logo.png-a69ab6a203b99fe07ffe2450b939d420.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MaterialsAndImages/BMWi_Fz_2017_Office_Farbe_de.png"
-dest_files=[ "res://.import/BMWi_Fz_2017_Office_Farbe_de.png-f1a58e8aea1597c76d2499e9d144b529.stex" ]
+source_file="res://Assets/MaterialsAndImages/mdzsh-logo.png"
+dest_files=[ "res://.import/mdzsh-logo.png-a69ab6a203b99fe07ffe2450b939d420.stex" ]
 
 [params]
 

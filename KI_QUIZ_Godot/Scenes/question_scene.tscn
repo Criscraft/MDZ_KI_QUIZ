@@ -8,6 +8,7 @@
 [node name="QuestionScene" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 script = ExtResource( 1 )
 scene_base = NodePath(".")
 scene = ExtResource( 4 )
@@ -32,6 +33,7 @@ margin_top = 44.0
 margin_right = 610.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 4 )
+mouse_filter = 1
 color = Color( 0.803922, 0.0392157, 0.117647, 1 )
 
 [node name="Question" type="Label" parent="VBoxContainer"]
@@ -47,6 +49,7 @@ autowrap = true
 margin_top = 122.0
 margin_right = 610.0
 margin_bottom = 282.0
+mouse_filter = 1
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
 margin_right = 610.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MD_farbig.png-64b6b1325392513c346c56d14e6c1075.stex"
+path="res://.import/mdzsh-logo.svg-34308f15b7706d2269d598e5b4a3d8e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MaterialsAndImages/MD_farbig.png"
-dest_files=[ "res://.import/MD_farbig.png-64b6b1325392513c346c56d14e6c1075.stex" ]
+source_file="res://Assets/MaterialsAndImages/mdzsh-logo.svg"
+dest_files=[ "res://.import/mdzsh-logo.svg-34308f15b7706d2269d598e5b4a3d8e4.stex" ]
 
 [params]
 

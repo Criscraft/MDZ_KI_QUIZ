@@ -33,6 +33,7 @@ autowrap = true
 margin_top = 254.0
 margin_right = 1024.0
 margin_bottom = 329.0
+mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]Möchten Sie mehr über KI erfahren und wie Sie sie sinnvoll in Ihrem Unternehmen einsetzen können? 
 

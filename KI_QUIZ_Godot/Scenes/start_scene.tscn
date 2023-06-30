@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/start_quiz_button.gd" type="Script" id=1]
 [ext_resource path="res://Assets/ThemesAndFonts/opensans_dynamicfont_title.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/start_scene.gd" type="Script" id=3]
-[ext_resource path="res://Assets/MaterialsAndImages/MD_farbig.png" type="Texture" id=4]
-[ext_resource path="res://Assets/MaterialsAndImages/BMWi_Fz_2017_Office_Farbe_de.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scripts/ResponsiveSetMinRectSize.gd" type="Script" id=6]
 
 [node name="StartScene" type="VBoxContainer"]
@@ -13,22 +11,6 @@ anchor_bottom = 1.0
 custom_constants/separation = 20
 alignment = 1
 script = ExtResource( 3 )
-
-[node name="MDLogo" type="TextureRect" parent="."]
-visible = false
-margin_left = 234.0
-margin_top = 456.0
-margin_right = 790.0
-margin_bottom = 626.0
-texture = ExtResource( 4 )
-
-[node name="BMWiLogo" type="TextureRect" parent="."]
-visible = false
-margin_left = -168.0
-margin_top = -159.0
-margin_right = 1192.0
-margin_bottom = 1241.0
-texture = ExtResource( 5 )
 
 [node name="Header" type="Label" parent="."]
 margin_top = 151.0
