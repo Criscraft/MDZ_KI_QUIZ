@@ -5,7 +5,8 @@ var current_scene_path : String
 onready var scene_node = $ScrollContainer/CenterContainer
 
 func _on_exit_to_main_menu():
-	load_scene("res://scenes/main_menu/main_menu_level.tscn")
+	pass
+	#load_scene("res://scenes/main_menu/main_menu_level.tscn")
 
 func _on_load_scene(p_scene_path : String):
 	load_scene(p_scene_path)
@@ -22,6 +23,8 @@ func load_scene(p_scene_path : String):
 	# Check if it's already loaded...
 	if p_scene_path == current_scene_path:
 		return
+		
+	
 
 	if current_scene:
 		# Start by unloading our scene
@@ -30,8 +33,9 @@ func load_scene(p_scene_path : String):
 		_remove_signals(current_scene)
 		
 		# Fade to loading screen
-		var tween = create_tween()
-		tween.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+		var tween = get_tree().create_tween()
+		tween.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.75)
+		yield(tween, "finished")
 		
 		# Now we remove our scene
 		current_scene.scene_exiting()
@@ -50,15 +54,12 @@ func load_scene(p_scene_path : String):
 	current_scene.scene_loaded()
 	
 	# Fade to visible
-	var tween = get_tree().create_tween()
-	tween.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0)
-	yield(tween, "finished")
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property($LoadingScreen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 0.75)
+	yield(tween2, "finished")
 
-#func update_rect_min_size():
-#	if is_instance_valid(current_scene):
-#		scene_node.rect_min_size = current_scene.rect_size
-	
 
 func _ready():
 	# We start by loading our start scene
 	load_scene("res://Scenes/start_scene.tscn")
+	# load_scene("res://Scenes/splashscreen.tscn")

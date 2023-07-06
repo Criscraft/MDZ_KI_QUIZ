@@ -2,36 +2,42 @@
 
 [ext_resource path="res://Scenes/result_scene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/change_scene_button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Scripts/ResponsiveSetMinRectSize.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="ResultScene" type="VBoxContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 custom_constants/separation = 30
 alignment = 1
 script = ExtResource( 1 )
+min_size_x_multiplier = 0.75
+color_correct = Color( 0.784314, 1, 0.784314, 1 )
+color_incorrect = Color( 1, 0.784314, 0.784314, 1 )
 
-[node name="ResultLabel" type="Label" parent="."]
-margin_top = 196.0
-margin_right = 1024.0
-margin_bottom = 210.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 350.0
+margin_bottom = 14.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="ResultLabel" type="Label" parent="PanelContainer"]
+margin_right = 350.0
+margin_bottom = 14.0
 text = "Ergebnis. Die richtige Antwortet lautet:"
 align = 1
 autowrap = true
-script = ExtResource( 3 )
 
 [node name="CorrectAnswer" type="Label" parent="."]
-margin_top = 240.0
-margin_right = 1024.0
-margin_bottom = 254.0
+margin_top = 44.0
+margin_right = 350.0
+margin_bottom = 58.0
 text = "Wiederholung der korrekten Antwort."
 align = 1
 autowrap = true
 
 [node name="Explanation" type="Label" parent="."]
-margin_top = 284.0
-margin_right = 1024.0
-margin_bottom = 298.0
+margin_top = 88.0
+margin_right = 350.0
+margin_bottom = 102.0
 text = "Eine nette Erklärung."
 align = 1
 autowrap = true
@@ -39,11 +45,10 @@ autowrap = true
 [node name="ChangeSceneButton" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 362.0
-margin_top = 328.0
-margin_right = 662.0
-margin_bottom = 403.0
-rect_min_size = Vector2( 300, 75 )
+margin_top = 132.0
+margin_right = 350.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 350, 75 )
 size_flags_horizontal = 4
 text = "Zur nächsten Frage!"
 scene_base = NodePath("..")

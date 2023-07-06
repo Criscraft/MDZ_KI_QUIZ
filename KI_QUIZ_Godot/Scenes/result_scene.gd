@@ -1,10 +1,14 @@
 extends SceneBase
 class_name ResultScene
 
-onready var result_label = $ResultLabel
+export var color_correct : Color
+export var color_incorrect : Color
+
+onready var result_label = $PanelContainer/ResultLabel
 onready var correct_answer_label = $CorrectAnswer
 onready var explanation_label = $Explanation
 onready var change_scene_button = $ChangeSceneButton
+onready var result_panel_container = $PanelContainer
 
 export var question_scene_path : String = "res://Scenes/question_scene.tscn"
 export var final_result_scene_path : String = "res://Scenes/final_result_scene.tscn"
@@ -27,8 +31,10 @@ func scene_exiting():
 func update_results():
 	if QuizManager.current_question_correct:
 		result_label.text = "Korrekt! Die richtige Antwort lautet:"
+		result_panel_container.get("custom_styles/panel").bg_color = color_correct
 	else:
 		result_label.text = "Leider falsch! Die richtige Antwort lautet:"
+		result_panel_container.get("custom_styles/panel").bg_color = color_incorrect
 	
 	correct_answer_label.text = current_question_resource.answers[current_question_resource.correct_answer]
 	

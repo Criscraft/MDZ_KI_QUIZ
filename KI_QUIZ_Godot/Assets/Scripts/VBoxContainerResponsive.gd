@@ -1,10 +1,10 @@
 extends VBoxContainer
 
-export var screen_width_threshold_for_column : int = 1050
+export var screen_width_threshold_for_column : int = 1200
 export var screen_width_threshold_min_for_option_size : int = 300
-export var screen_width_threshold_max_for_option_size : int = 550
+export var screen_width_threshold_max_for_option_size : int = 2400
 export var option_size_small = 250
-export var option_size_large = 500
+export var option_size_large = 1000
 onready var grid_container = $CenterContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.

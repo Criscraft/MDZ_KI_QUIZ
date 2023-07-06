@@ -15,9 +15,9 @@ scene = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 207.0
-margin_top = 159.0
+margin_top = 124.0
 margin_right = 817.0
-margin_bottom = 441.0
+margin_bottom = 476.0
 custom_constants/separation = 30
 alignment = 1
 script = ExtResource( 2 )
@@ -48,12 +48,12 @@ autowrap = true
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 122.0
 margin_right = 610.0
-margin_bottom = 282.0
+margin_bottom = 352.0
 mouse_filter = 1
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
 margin_right = 610.0
-margin_bottom = 160.0
+margin_bottom = 230.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 2
@@ -62,29 +62,29 @@ columns = 2
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 300.0
-margin_bottom = 75.0
+margin_bottom = 110.0
 
 [node name="ChoiceB" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 310.0
 margin_right = 610.0
-margin_bottom = 75.0
+margin_bottom = 110.0
 
 [node name="ChoiceC" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 85.0
+margin_top = 120.0
 margin_right = 300.0
-margin_bottom = 160.0
+margin_bottom = 230.0
 
 [node name="ChoiceD" parent="VBoxContainer/CenterContainer/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 310.0
-margin_top = 85.0
+margin_top = 120.0
 margin_right = 610.0
-margin_bottom = 160.0
+margin_bottom = 230.0
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/ChoiceA" to="." method="_on_choice_pressed" binds= [ 0 ]]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/ChoiceB" to="." method="_on_choice_pressed" binds= [ 1 ]]

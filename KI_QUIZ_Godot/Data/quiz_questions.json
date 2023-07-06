@@ -48,7 +48,7 @@
 			"question": "KIs werden meist in zwei Bereiche unterteilt. \n Welche sind das?",
 			"answers" : ["konservative und liberale KI", "starke und schwache KI", "große und kleine KI", "traditionelle und neue KI"],
 			"correct_answer" : 1,
-			"explanation" : "Eine starke KI wäre in der Lage intellektuelle Aufgaben zu verstehen oder zu lernen, die auch ein Mensch in der Lage ist zu lösen. Davon sind wir noch Jahrzehnte entfernt."
+			"explanation" : "Eine starke KI wäre in der Lage intellektuelle Aufgaben zu verstehen oder zu lernen, die auch ein Mensch in der Lage ist zu lösen."
 		},
 		{
 			"id": "q8",
