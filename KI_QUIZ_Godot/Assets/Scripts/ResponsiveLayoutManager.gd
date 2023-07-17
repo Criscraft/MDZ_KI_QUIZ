@@ -17,8 +17,8 @@ func _ready():
 
 func on_viewport_resize():
 	var size = get_viewport().size
-	size = min(size.x, size.y)
-	var factor = ( size - screen_width_threshold_min ) / ( screen_width_threshold_max - screen_width_threshold_min )
+	var size_min = min(size.x, size.y)
+	var factor = ( size_min - screen_width_threshold_min ) / ( screen_width_threshold_max - screen_width_threshold_min )
 	factor = clamp(factor, 0.0, 1.0)
 	
 	var font_size = font_size_small + factor * (font_size_large - font_size_small)

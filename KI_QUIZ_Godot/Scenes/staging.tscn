@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/MaterialsAndImages/mdzsh-logo.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/staging.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/BGPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/responsive_layout_manager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/ThemesAndFonts/mdz_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Scripts/responsive_logo.gd" type="Script" id=6]
 
 [node name="Staging" type="Control"]
 anchor_right = 1.0
@@ -37,11 +38,12 @@ size_flags_vertical = 3
 
 [node name="Logo" type="TextureRect" parent="."]
 anchor_right = 0.4
-anchor_bottom = 0.4
+anchor_bottom = 0.3
 margin_left = 10.0
 margin_top = 10.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 6 )
 
 [node name="ResponsiveLayoutManager" parent="." instance=ExtResource( 4 )]
